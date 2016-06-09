@@ -1,0 +1,13 @@
+-# This file is  app/views/joblisting/index.html.haml
+%h2 All Jobs
+
+%table#job
+  %thead
+    %tr
+      %th Job Number
+      %th Job Description
+  %tbody
+    - @jobs.each do |item|
+      %tr
+        %td= item.jobNumber
+        %td= item.jobDescription
