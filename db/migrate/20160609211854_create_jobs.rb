@@ -5,7 +5,7 @@ class CreateJobs < ActiveRecord::Migration
       t.text 'jobDescription'
       t.string 'contactNumber'
       t.string 'contactName'
-      t.string 'contact email'
+      t.string 'contactEmail'
       t.string 'companyName'
     end
   end
