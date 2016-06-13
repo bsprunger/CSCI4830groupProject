@@ -6,10 +6,10 @@
   = text_field :jobs, :companyName
   
   = label :jobs, :jobDescription, 'Job Description'
-  = text_field :jobs, :jobDescription
-
-  = label :jobs, :languages, 'Language'
-  = select :jobs, :languages, Job.all_languages
+  = text_area :jobs, :jobDescription, :rows => 5, :cols => 50 
+  
+  = label :jobs, :language, 'Language'
+  = select :jobs, :language, Job.all_languages
   
   = label :jobs, :contactName, 'Contact Name'
   = text_field :jobs, :contactName
