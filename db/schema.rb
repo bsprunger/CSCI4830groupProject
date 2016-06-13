@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160609211854) do
   create_table "jobs", force: :cascade do |t|
     t.string "companyName"
     t.text   "jobDescription"
-    t.string "languages"
+    t.string "language"
     t.string "contactName"
     t.string "contactNumber"
     t.string "contactEmail"

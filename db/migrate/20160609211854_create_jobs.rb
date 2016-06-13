@@ -3,7 +3,7 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       t.string 'companyName'
       t.text 'jobDescription'
-      t.string 'languages'
+      t.string 'language'
       t.string 'contactName'
       t.string 'contactNumber'
       t.string 'contactEmail'

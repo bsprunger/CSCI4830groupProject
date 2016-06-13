@@ -4,7 +4,7 @@ class JoblistingController < ApplicationController
     end
     
     def job_params
-        params.require(:jobs).permit(:companyName, :jobDescription, :languages, :contactNumber, :contactName, :contactEmail)
+        params.require(:jobs).permit(:companyName, :jobDescription, :language, :contactNumber, :contactName, :contactEmail)
     end
     
     def show
