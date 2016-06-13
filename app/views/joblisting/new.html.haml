@@ -1,0 +1,23 @@
+%h2 Create New Job Listing
+
+= form_tag '/joblisting', :method => :post do
+
+  = label :jobs, :companyName, 'Company Name'
+  = text_field :jobs, :companyName
+  
+  = label :jobs, :jobDescription, 'Job Description'
+  = text_field :jobs, :jobDescription
+
+  = label :jobs, :languages, 'Language'
+  = select :jobs, :languages, Job.all_languages
+  
+  = label :jobs, :contactName, 'Contact Name'
+  = text_field :jobs, :contactName
+  
+  = label :jobs, :contactNumber, 'Contact Number'
+  = text_field :jobs, :contactNumber
+  
+  = label :jobs, :contactEmail, 'Contact Email'
+  = text_field :jobs, :contactEmail
+  
+  = submit_tag 'Submit'

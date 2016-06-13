@@ -4,10 +4,22 @@
 %table#job
   %thead
     %tr
-      %th Job Number
+      %th Company Name
       %th Job Description
+      %th Language Requirements
+      %th Contact Name
+      %th Contact Number
+      %th Contact Email
   %tbody
     - @jobs.each do |item|
       %tr
-        %td= item.jobNumber
+        %td= item.companyName
         %td= item.jobDescription
+        %td= item.languages
+        %td= item.contactName
+        %td= item.contactNumber
+        %td= item.contactEmail
+        
+= link_to 'Add new job listing', new_joblisting_path
+
+        
