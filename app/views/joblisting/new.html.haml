@@ -1,23 +1,31 @@
-%h2 Create New Job Listing
+.page-header
+  %h1 Create New Job Listing
 
-= form_tag '/joblisting', :method => :post do
+= form_tag '/joblisting', :method => :post, :html => { class: "form form-horizontal job" } do
 
-  = label :jobs, :companyName, 'Company Name'
-  = text_field :jobs, :companyName
+  .form-group
+    = label :jobs, :companyName, 'Company Name', class: 'control-label'
+    .controls
+      = text_field :jobs, :companyName, class: 'form-control'
+  .form-group
+    = label :jobs, :jobDescription, 'Job Description', class: 'control-label'
+    .controls
+      = text_area :jobs, :jobDescription, :rows => 5, :cols => 50, class: 'form-control'
+  .form-group
+    = label :jobs, :language, 'Language', class: 'control-label'
+    .controls
+      = select :jobs, :language, Job.all_languages, class: 'form-control'
+  .form-group
+    = label :jobs, :contactName, 'Contact Name', class: 'control-label'
+    .controls
+      = text_field :jobs, :contactName, class: 'form-control'
+  .form-group
+    = label :jobs, :contactNumber, 'Contact Number', class: 'control-label'
+    .controls
+      = text_field :jobs, :contactNumber, class: 'form-control'
+  .form-group
+    = label :jobs, :contactEmail, 'Contact Email', class: 'control-label'
+    .controls
+      = text_field :jobs, :contactEmail, class: 'form-control'
   
-  = label :jobs, :jobDescription, 'Job Description'
-  = text_area :jobs, :jobDescription, :rows => 5, :cols => 50 
-  
-  = label :jobs, :language, 'Language'
-  = select :jobs, :language, Job.all_languages
-  
-  = label :jobs, :contactName, 'Contact Name'
-  = text_field :jobs, :contactName
-  
-  = label :jobs, :contactNumber, 'Contact Number'
-  = text_field :jobs, :contactNumber
-  
-  = label :jobs, :contactEmail, 'Contact Email'
-  = text_field :jobs, :contactEmail
-  
-  = submit_tag 'Submit'
+  = submit_tag 'Submit',class: 'btn btn-primary'

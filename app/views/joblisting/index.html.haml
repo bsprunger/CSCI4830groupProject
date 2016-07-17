@@ -1,7 +1,8 @@
 -# This file is  app/views/joblisting/index.html.haml
-%h2 Available Jobs
+.page-header
+  %h1 Available Jobs
 
-%table#job
+%table.table.table-striped#job
   %thead
     %tr
       %th Company Name
@@ -20,6 +21,6 @@
         %td= item.contactNumber
         %td= item.contactEmail
         
-= link_to 'Add new job listing', new_joblisting_path
+= link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
 
         
