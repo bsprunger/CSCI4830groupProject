@@ -237,7 +237,7 @@ form label {
     line-height: 1.42857;
     padding: 6px 12px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    width: 100%;
+    width: 50%; /* modified to 50% from 100% */
 }
 
 .form-control:focus {
@@ -280,7 +280,7 @@ input, button, select, textarea {
 }
 
 select{
-    width: 100%;
+    width: 50%;  /* modified to 50% from 100% */
 }
 
 .btn {
