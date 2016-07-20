@@ -1,0 +1,35 @@
+-# in app/views/jobslisting/show.html.haml
+
+%h2 Details about #{@jobs.jobTitle}
+
+%ul#details
+  %li
+    Company name:
+    = @jobs.companyName
+  %li
+    Job Title:
+    = @jobs.jobTitle
+  %li
+    Language Requirements
+    = @jobs.language
+  %li
+    Contact Name:
+    = @jobs.contactName
+  %li
+    Contact Number:
+    = @jobs.contactNumber
+  %li
+    Contact Email:
+    = @jobs.contactEmail
+
+%h3 Description:
+
+%p#description= @jobs.jobDescription
+
+
+= button_to 'Delete Job Entry', joblisting_path(@jobs), :method => :delete, :confirm => 'Are you sure?'
+%br
+= link_to 'Edit', edit_joblisting_path(@jobs)
+%br
+%br
+= link_to 'Back to job listing', joblisting_index_path

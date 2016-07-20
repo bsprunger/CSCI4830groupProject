@@ -1,0 +1,34 @@
+%h1 Edit Existing Job Entry
+
+= form_tag joblisting_path(@jobs), :method => :put do
+
+  .form-group
+    = label :jobs, :companyName, 'Company Name', class: 'control-label'
+    .controls
+      = text_field :jobs, 'companyName', class: 'form-control'
+  .form-group
+    = label :jobs, :jobTitle, 'Job Title', class: 'control-label'
+    .controls
+      = text_field :jobs, 'jobTitle', class: 'form-control'
+  .form-group
+    =label :jobs, :language, 'Language', class: 'control-label'
+    .controls
+      = select :jobs, :language, Job.all_languages, class: 'form-control'
+  .form-group
+    = label :jobs, :contactName, 'Contact Name', class: 'control-label'
+    .controls
+      = text_field :jobs, 'contactName', class: 'form-control'
+  .form-group
+    = label :jobs, :contactNumber, 'Contact Number', class: 'control-label'
+    .controls  
+      = text_field :jobs, 'contactNumber', class: 'form-control'
+  .form-group
+    = label :jobs, :contactEmail, 'Contact Email', class: 'control-label'
+    .controls
+      = text_field :jobs, 'contactEmail', class: 'form-control'
+  .form-group
+    = label :jobs, :jobDescription, 'Job Description', class: 'control-label'
+    .controls
+      = text_area :jobs, 'jobDescription', :rows => 5, :cols => 50, class: 'form-control'
+
+  = submit_tag 'Update Job Entry', class: 'btn btn-primary'

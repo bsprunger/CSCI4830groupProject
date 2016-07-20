@@ -4,15 +4,23 @@
 = form_tag '/joblisting', :method => :post, :html => { class: "form form-horizontal job" } do
 
   .form-group
+    = label :jobs, :dateCreated, 'Date Created', class: 'control-label'
+    .controls
+      = date_select :jobs, :dateCreated, :rows => 1, :cols => 10, class: 'form-control'
+  .form-group
     = label :jobs, :companyName, 'Company Name', class: 'control-label'
     .controls
       = text_field :jobs, :companyName, class: 'form-control'
+  .form-group
+    = label :jobs, :jobTitle, 'Job Title', class: 'control-label'
+    .controls
+      = text_field :jobs, :jobTitle, class: 'form-control'
   .form-group
     = label :jobs, :jobDescription, 'Job Description', class: 'control-label'
     .controls
       = text_area :jobs, :jobDescription, :rows => 5, :cols => 50, class: 'form-control'
   .form-group
-    = label :jobs, :language, 'Language', class: 'control-label'
+    = label :jobs, :language, 'Language Requirements', class: 'control-label'
     .controls
       = select :jobs, :language, Job.all_languages, class: 'form-control'
   .form-group

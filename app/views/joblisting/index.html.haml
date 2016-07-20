@@ -5,21 +5,17 @@
 %table.table.table-striped#job
   %thead
     %tr
+      %th Date Created
       %th Company Name
-      %th Job Description
-      %th Language Requirements
+      %th Job Title
       %th Contact Name
-      %th Contact Number
-      %th Contact Email
   %tbody
     - @jobs.each do |item|
       %tr
+        %td= item.dateCreated
         %td= item.companyName
-        %td= item.jobDescription
-        %td= item.language
+        %td= link_to "#{item.jobTitle}", joblisting_path(item)
         %td= item.contactName
-        %td= item.contactNumber
-        %td= item.contactEmail
         
 = link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
 
