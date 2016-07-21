@@ -2,21 +2,29 @@
 .page-header
   %h1 Available Jobs
 
+= form_tag joblisting_index_path, :method => 'get' do
+  = label_tag :serch, value = "Search by Job Title or Company Name:"
+  = text_field_tag :search, placeholder = '', params{:search}
+  = submit_tag "Refresh", :name => nil
+
+
 %table.table.table-striped#job
   %thead
     %tr
-      %th Date Created
-      %th Company Name
       %th Job Title
+      %th Company Name
       %th Contact Name
+      %th Date Created
   %tbody
     - @jobs.each do |item|
       %tr
-        %td= item.dateCreated
-        %td= item.companyName
         %td= link_to "#{item.jobTitle}", joblisting_path(item)
+        %td= item.companyName
         %td= item.contactName
-        
+        %td= item.dateCreated
+%div
+  = will_paginate @jobs, :param_name => :page  
+%br
 = link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
 
         

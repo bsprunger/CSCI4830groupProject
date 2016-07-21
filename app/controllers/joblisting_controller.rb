@@ -1,6 +1,6 @@
 class JoblistingController < ApplicationController
     def index
-        @jobs = Job.all
+        @jobs = Job.search(params[:search]).paginate(:page => params[:page], :per_page => 10)
     end
     
     def job_params
