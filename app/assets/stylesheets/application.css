@@ -281,6 +281,7 @@ input, button, select, textarea {
 
 select{
     width: 50%;  /* modified to 50% from 100% */
+    height: 46px;
 }
 
 .btn {
@@ -436,8 +437,9 @@ select{
     /*width: 50px;*/
     /*height: 30px;*/
 /*}*/
-
-.next_page .previous_page{
+a[rel="next"],
+a[rel="prev start"],
+.next_page, .previous_page {
     -moz-user-select: none;
     background-image: none;
     border: 1px solid transparent;
@@ -452,7 +454,31 @@ select{
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
-    background-color: #449D44;
+    background-color: #fff;
+    border-color: #000;
+    color: #449D44;
+}
+
+.current {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #EC971F;
     border-color: #fff;
     color: #fff;
+}
+
+.pagination {
+    float: right;
 }
