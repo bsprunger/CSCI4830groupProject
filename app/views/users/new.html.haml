@@ -1,0 +1,20 @@
+- @page_title = "UserAuth | Signup"
+.Sign_Form
+  %h1 Sign Up
+  = form_for @user do |f|
+    - if @user.errors.any?
+      .error_messages
+        %h2 Form is invalid
+        %ul
+          - @user.errors.full_messages.each do |message|
+            %li= message
+    %p
+      Email: 
+      #{f.text_field :email}
+    %p
+      Password: 
+      #{f.password_field :password}
+    %p
+      Password Confirmation: 
+      #{f.password_field :password_confirmation}
+    = f.submit :Signup
