@@ -3,9 +3,14 @@
   %h1 Available Jobs
 
 = form_tag joblisting_index_path, :method => 'get' do
-  = label_tag :serch, value = "Search by Job Title or Company Name:"
-  = text_field_tag :search, placeholder = '', params{:search}
-  = submit_tag "Refresh", :name => nil
+
+  %div.search-form
+    %div.search-control
+      = label_tag :serch, value = "Search by Job Title or Company Name:"
+    %div.search-control
+      = text_field_tag :search, placeholder = '', params{:search}
+    %div.search-control
+      = submit_tag "Refresh", :name => nil, :class => 'btn btn-refresh'
 
 
 %table.table.table-striped#job
@@ -23,7 +28,7 @@
         %td= item.contactName
         %td= item.dateCreated
 %div
-  = will_paginate @jobs, :param_name => :page  
+  = will_paginate @jobs, :param_name => :page
 %br
 = link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
 
