@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 
 group :development do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
 
