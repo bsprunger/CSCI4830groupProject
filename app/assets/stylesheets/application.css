@@ -354,6 +354,18 @@ select{
     color: #fff;
 }
 
+.btn-login {
+    background-color: #B2B1AF;
+    border-color: #fff;
+    color: #fff;
+}
+
+.btn-delete {
+    background-color: #FA2C03;
+    border-color: #fff;
+    color: #fff;
+}
+
 .container-1{
     width: 300px;
     vertical-align: middle;
