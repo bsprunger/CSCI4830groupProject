@@ -30,6 +30,9 @@
 %div
   = will_paginate @jobs, :param_name => :page
 %br
-= link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
+- if current_user
+  = link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
+- else
+  Sign Up to Add a Job!
 
         

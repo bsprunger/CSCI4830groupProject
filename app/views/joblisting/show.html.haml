@@ -27,9 +27,13 @@
 %p#description= @jobs.jobDescription
 
 
-= button_to 'Delete Job Entry', joblisting_path(@jobs), :method => :delete, :confirm => 'Are you sure?'
-%br
-= link_to 'Edit', edit_joblisting_path(@jobs)
+
 %br
 %br
-= link_to 'Back to job listing', joblisting_index_path
+- if current_user.nil?
+  = link_to 'Back to job listing', joblisting_index_path
+- else
+  = button_to 'Delete Job Entry', joblisting_path(@jobs), :method => :delete, :confirm => 'Are you sure?'
+  %br
+  = link_to 'Edit', edit_joblisting_path(@jobs)
+  = link_to 'Back to job listing', joblisting_index_path
