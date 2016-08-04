@@ -30,6 +30,7 @@
 
 %br
 %br
+-# Only allow access to Delete and Edit if the user is logged in
 - if current_user.nil?
   = link_to 'Back to job listing', joblisting_index_path
 - else

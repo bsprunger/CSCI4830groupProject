@@ -5,6 +5,7 @@
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    -# Uses cureent_user method in application controller
     - if current_user
       = link_to "Log out", session_path(:current), :method => :delete, class: 'btn btn-login',:style => "float: right;"
       Logged in as #{current_user.email}
