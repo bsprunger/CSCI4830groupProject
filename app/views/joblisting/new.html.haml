@@ -1,12 +1,11 @@
 .page-header
   %h1 Create New Job Listing
-
+ 
 = form_tag '/joblisting', :method => :post, :html => { class: "form form-horizontal job" } do
-
   .form-group
     = label :jobs, :dateCreated, 'Date Created', class: 'control-label'
     .controls
-      = date_select :jobs, :dateCreated, class: 'form-control'
+    = date_select :jobs, :dateCreated, class: 'form-control'
   .form-group
     = label :jobs, :companyName, 'Company Name', class: 'control-label'
     .controls

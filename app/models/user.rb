@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   private
 
   def validate_password?
-    password.present? || password_confirmation.present?
+    password.present? and password_confirmation.present?
   end
 
 end
