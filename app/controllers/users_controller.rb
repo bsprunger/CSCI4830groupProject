@@ -8,11 +8,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      UserMailer.registration_confirmation(@user).deliver
       redirect_to root_url, notice: "Thank-you for enrolling!"
     else
       render "new"
     end
   end
+  
   
   private
   

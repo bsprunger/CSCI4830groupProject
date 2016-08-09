@@ -5,7 +5,7 @@ Feature: data entry clerk can access to job openings list
   Provide the latest job openings
   I want to able to create new job openings
   """
-
+"""
   Scenario: No companies
     Given there are no job openings added in database
     When I go to joblisting page
@@ -16,3 +16,4 @@ Feature: data entry clerk can access to job openings list
     And: The system shows less job postings
     When: I reload the page
     Then: The system shows all job postings
+"""

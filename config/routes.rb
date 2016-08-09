@@ -3,8 +3,15 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: 'logout'
 
   resources :users
-  resources :joblisting
+  resources :joblisting do
+    member do
+      get 'send_database_email' => 'joblisting#send_database_email'
+    end
+  end
   resources :sessions
+  
+  
+  
   root :to => redirect('/joblisting')
 end
   
