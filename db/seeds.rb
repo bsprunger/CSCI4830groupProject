@@ -25,3 +25,7 @@ jobs = [{:dateCreated => '2001-01-25', :companyName => 'The Testing Company', :j
 jobs.each do |item|
   Job.create!(item)
 end
+
+# Test User added for tests to run properly without any errors
+
+User.create!(:email => 'testUser@joblisting.com', :password_digest => 'testing')

@@ -24,9 +24,12 @@
     - @jobs.each do |item|
       %tr
         %td= link_to "#{item.jobTitle}", joblisting_path(item)
-        %td= item.companyName
+        %td{:id => "employer"}= item.companyName
         %td= item.contactName
         %td= item.dateCreated
+%div
+  %p{:id => 'list_message'}
+    = "#{@jobs.count <= 0 ? "No Jobs Found!" : ""}"
 %div
   = will_paginate @jobs, :param_name => :page
 %br
@@ -34,5 +37,3 @@
   = link_to 'Add new job listing', new_joblisting_path, :class => 'btn btn-primary'
 - else
   Sign Up to Add a Job!
-
-        

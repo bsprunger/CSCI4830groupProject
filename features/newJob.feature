@@ -22,14 +22,14 @@ Feature: Post new job
 
   Scenario: Unsuccessful posting
     Given I am on new joblisting page
-    And I select " " from "jobs dateCreated 1i"
-    And I select " " from "jobs dateCreated 2i"
-    And I select " " from "jobs dateCreated 3i"
-    And I fill in "jobs jobTitle" with "Test Title"
-    And I fill in "jobs companyName" with "Test Company"
-    And I fill in "jobs contactNumber" with "123456"
-    And I fill in "jobs contactName" with "Test Name"
-    And I fill in "jobs contactEmail" with "test@email.com"
+    And I select "select" from "jobs dateCreated 1i"
+    And I select "select" from "jobs dateCreated 2i"
+    And I select "select" from "jobs dateCreated 3i"
+    And I fill in "jobs jobTitle" with ""
+    And I fill in "jobs companyName" with ""
+    And I fill in "jobs contactNumber" with ""
+    And I fill in "jobs contactName" with ""
+    And I fill in "jobs contactEmail" with ""
     When I press "Submit"
-    Then I should be on joblisting page
+    Then I should not be on joblisting page
     And System should not display "Job Listing was successfully created!"

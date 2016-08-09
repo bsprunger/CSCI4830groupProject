@@ -1,10 +1,11 @@
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "support", "paths"))
+require 'rack_session_access/capybara'
 
 Given /^I am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-Given /^The data entry clerk is on Job Details Page$/ do
+Given /^The user is on Job Details Page$/ do
   visit ("joblisting/#{@job.id}")
 end
 
@@ -13,7 +14,7 @@ And /^I visit edit page of joblisting$/ do
 end
 
 Given "there are no job openings added in database" do
-  Job.all.count == 0
+  Job.all.count <= 0
 end
 
 Given /^I am on (.+) show page$/ do |page_name|
@@ -30,9 +31,9 @@ end
 
 Then /^Jobs should be sorted with (.+) Employers$/ do |key|
   count = 0
-  elements = find("td.employer")
-  elements.map{|td| (td.try(:text).include? key ? count+=1 : count-=1)}
-  count == elements.count
+  elements = all("td#employer")
+  elements.map{|td| (td.try(:text).include?(key.to_s) ? count+=1 : count-=1)}
+  elements.count > 0 && count == elements.count ? true : false
 end
 
 Then /^The system shows all job postings$/ do
@@ -88,6 +89,10 @@ Then /^I should be on (.+)$/ do |page_name|
   current_path.gsub('/') == page_name
 end
 
+Then /^I should not be on (.+)$/ do |page_name|
+  current_path.gsub('/') != page_name
+end
+
 And /^System should display (.+)$/ do |message|
   find('div#notice').try(:text) == message
 end
@@ -97,7 +102,7 @@ And /^System should not display (.+)$/ do |message|
 end
 
 Then /^System display message (.+)$/ do |message|
-  if element = find('p.empty_list')
+  if element = find('p#list_message')
     element.try(:text) == message
   else
     false
@@ -114,4 +119,9 @@ Given /^there is a joblisting created$/ do
   else
     @job = Job.first
   end
+end
+
+Given /^Test User is logged in$/ do
+  User.create!(:email => 'testUser@joblisting.com', :password_digest => 'testing') if User.where(:email => 'testUser@joblisting.com').first.nil?
+  page.set_rack_session(:user_id => User.where(:email => 'testUser@joblisting.com').first.id)
 end

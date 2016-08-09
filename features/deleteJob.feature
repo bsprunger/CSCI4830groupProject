@@ -7,14 +7,16 @@ Feature: Delete job
 
   Scenario: Delete Job
     Given there is a joblisting created
-    Given The data entry clerk is on Job Details Page
+    Given Test User is logged in
+    Given The user is on Job Details Page
     When I press "Delete Job Entry"
     Then joblisting should be deleted
     And I should be redirected to joblisting page
 
   Scenario: Delete Job if completed
     Given there is a joblisting created
-    Given The data entry clerk is on Job Details Page
+    Given Test User is logged in
+    Given The user is on Job Details Page
     When job listing is filled
     When I press "Delete Job Entry"
     Then joblisting should be deleted
@@ -22,7 +24,8 @@ Feature: Delete job
 
   Scenario: Delete Job if In-appropriate
     Given there is a joblisting created
-    Given The data entry clerk is on Job Details Page
+    Given Test User is logged in
+    Given The user is on Job Details Page
     When joblisting is in-appropriate
     When I press "Delete Job"
     Then joblisting should be deleted

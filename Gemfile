@@ -47,6 +47,8 @@ group :development, :test do
   gem 'byebug'
 end
 
+gem 'rack_session_access'
+
 gem 'simplecov', :require => false
 
 group :development do

@@ -9,7 +9,7 @@ Feature: data entry clerk can access to job openings list
   Scenario: No companies
     Given there are no job openings added in database
     When I go to joblisting page
-    Then System display message "No job postings found"
+    Then System display message "No Jobs Found!"
 
   Scenario: Less companies than requested
     Given: There are some job postings in the database
