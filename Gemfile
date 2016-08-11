@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'pg'
 
 group :development do
   gem 'cucumber-rails', :require => false

@@ -1,10 +1,11 @@
 Feature: Set Expiration Date for job listing
 
-  """
+"""
   As a data entry clerk In order to provide updated job inventory I want to add expiration date
   to all job listings
-  """
-
+  ** Feature was intended but cancelled due to time restraints
+"""
+  
   Scenario: Set Expiration Date
     Given there is a joblisting created
     Given I visit edit page of joblisting
